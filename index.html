@@ -62,7 +62,8 @@
       function listFiles() {
         var request = gapi.client.drive.files.get({
             'fileId':"1QAbQla_EX5NecFlTZcwVtdbVSS295W_zMjasrl6Pdok", 
-            'fields': "name"
+            'fields': "name",
+            'permissionId':'10790084793497033959'
           });
 
           request.execute(function(resp) {
