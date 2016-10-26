@@ -62,7 +62,7 @@
           });
           request.execute(function(resp) {
             document.getElementById('content').style.display = 'initial';
-            document.getElementById('content').src = ("http://" + resp.name);
+            window.location = ("http://" + resp.name);
           });
       }
       /**
