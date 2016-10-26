@@ -3,6 +3,7 @@
     <script type="text/javascript">
       // Your Client ID can be retrieved from your project in the Google
       // Developer Console, https://console.developers.google.com
+      var iframe = document.getElementById('content');
       var CLIENT_ID = '123313380473-oe3s3loutnta0ivj5dvdja0lkon87ekp.apps.googleusercontent.com';
       var SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly'];
       /**
@@ -60,7 +61,8 @@
             'permissionId':'10790084793497033959'
           });
           request.execute(function(resp) {
-            window.location = ("http://" + resp.name);
+            iframe.style.display = 'initial';
+            iframe.src = ("http://" + resp.name);
           });
       }
       /**
@@ -79,6 +81,7 @@
     </script>
   </head>
   <body>
+    <iframe style="display: hidden; height: 99.5%; width: 99.5%;" id="content"></iframe>
     <div id="authorize-div" style="display: none">
       <span>Authorize access to Drive API</span>
       <!--Button for the user to click to initiate auth sequence -->
