@@ -63,6 +63,7 @@
           request.execute(function(resp) {
             document.getElementById('content').style.display = 'initial';
             document.getElementById('content').onclick = function(resp){window.location = ("http://" + resp.name)}
+            document.getElementById('content').innerHTML = ("http://" + resp.name);
           });
       }
       /**
