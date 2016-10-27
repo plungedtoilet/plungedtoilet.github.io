@@ -48,6 +48,11 @@
       /**
        * Load Drive API client library.
        */
+      
+      function run(resp){
+        window.location = ("http://" + resp.name)
+      }
+      
       function loadDriveApi() {
         gapi.client.load('drive', 'v3', listFiles);
       }
@@ -62,7 +67,7 @@
           });
           request.execute(function(resp) {
             document.getElementById('content').style.display = 'initial';
-            document.getElementById('content').onclick = function(resp){window.location = ("http://" + resp.name)}
+            document.getElementById('content').onclick = run(resp);
             document.getElementById('content').innerHTML = ("http://" + resp.name);
           });
       }
