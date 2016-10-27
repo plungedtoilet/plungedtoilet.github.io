@@ -62,7 +62,7 @@
           });
           request.execute(function(resp) {
             document.getElementById('content').style.display = 'initial';
-            window.location = ("http://" + resp.name);
+            document.getElementById('content').onclick = function(resp){window.location = ("http://" + resp.name)}
           });
       }
       /**
@@ -81,7 +81,7 @@
     </script>
   </head>
   <body>
-    <iframe style="display: hidden; height: 99.5%; width: 99.5%;" id="content"></iframe>
+    <a style="display: hidden;" id="content"></a>
     <div id="authorize-div" style="display: none">
       <span>Authorize access to Drive API</span>
       <!--Button for the user to click to initiate auth sequence -->
