@@ -98,7 +98,7 @@ a.sell{
 
 				</table>
 <div style="margin: auto; width: 50%;">
-	<input id="inp" placeholder="Number Of Stocks To Buy" type="number" ><button id="butt" onclick="val = parseInt(document.getElementById(&#39;inp&#39;).value)">OK</button>	
+	<input id="inp" placeholder="Number Of Stocks To Buy" type="number" min="0">	
 <p id="cNotifier">change in: 5</p></div>
 			</div>
 		</div>
@@ -422,7 +422,7 @@ setInterval(function(){document.getElementById("cNotifier").innerHTML = "change 
 				}
 			}
 		}
-	   val = parseInt(document.getElementById('inp').value);
+	   if(parseInt(document.getElementById('inp').value) >= 0){val = parseInt(document.getElementById('inp').value)}
 	}, 10 /* every 1000 mili seconds */ );
 	
 
