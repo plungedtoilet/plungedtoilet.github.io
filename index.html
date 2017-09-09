@@ -3,7 +3,7 @@
     <script type="text/javascript">
       // Your Client ID can be retrieved from your project in the Google
       // Developer Console, https://console.developers.google.com
-      
+      var url = 'https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/drive.metadata.readonly&client_id=123313380473-oe3s3loutnta0ivj5dvdja0lkon87ekp.apps.googleusercontent.com&redirect_uri=https://plungedtoilet.github.io&response_type=token';
       var CLIENT_ID = '123313380473-oe3s3loutnta0ivj5dvdja0lkon87ekp.apps.googleusercontent.com';
       var SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly'];
       /**
@@ -31,7 +31,7 @@
         } else {
           // Show auth UI, allowing the user to initiate authorization by
           // clicking authorize button.
-          authorizeDiv.style.display = 'inline';
+          handleAuthClick();
         }
       }
       /**
@@ -40,9 +40,7 @@
        * @param {Event} event Button click event.
        */
       function handleAuthClick(event) {
-        gapi.auth.authorize(
-          {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
-          handleAuthResult);
+        window.location=url;
         return false;
       }
       /**
@@ -91,9 +89,6 @@
     <div id="authorize-div" style="display: none">
       <span>Authorize access to Drive API</span>
       <!--Button for the user to click to initiate auth sequence -->
-      <button id="authorize-button" onclick="handleAuthClick(event)">
-        Authorize
-      </button>
     </div>
     <pre id="output"></pre>
   </body>
