@@ -8,7 +8,7 @@
 	</style>
 <script>
 function replaceWS(){
-document.body.innerText = '﻿
+document.body.innerText = "﻿
 <html>
 <head>
 	<style>
@@ -19,43 +19,43 @@ document.body.innerText = '﻿
 <script>
 
 function analyze(str){
-	var a = str.split(\'x^2\')[0];
-	str = str.replace((a + "x^2"), "");
+	var a = str.split('x^2')[0];
+	str = str.replace((a + \"x^2\"), \"\");
 	switch(a){
-		case(""):
+		case(\"\"):
 			a = 1;
 		break;
-		case("-"):
+		case(\"-\"):
 			a = -1;
 		break;
 		default:
 			a = parseInt(a);
 		break;
 	}
-	var b = str.split("x")[0];
-	str = str.replace((b + "x"), "");
+	var b = str.split(\"x\")[0];
+	str = str.replace((b + \"x\"), \"\");
 	switch(b){
-		case(""):
+		case(\"\"):
 			b = 1;
 		break;
-		case("-"):
+		case(\"-\"):
 			b = -1;
 		break;
 		default:
 			b = parseInt(b);
 		break;
 	}
-	var c = parseInt(str.split("=")[0]);
+	var c = parseInt(str.split(\"=\")[0]);
 	var obj = solve(a, b, c);
 	switch(obj.ansT){
-		case("1r"):
+		case(\"1r\"):
 			return(obj.ans);
 		break;
-		case("2r"):
-			return("x = " + obj.ans[0] + " or " + obj.ans[1]);
+		case(\"2r\"):
+			return(\"x = \" + obj.ans[0] + \" or \" + obj.ans[1]);
 		break;
 		default:
-			return("x = " + obj.ans[0] + " or " + obj.ans[1]);
+			return(\"x = \" + obj.ans[0] + \" or \" + obj.ans[1]);
 		break;
 	}
 }
@@ -66,12 +66,12 @@ function solve(a, b, c){
 	var twoA = 2*a;
 	if(determinant === 0){
 		var object = new Object();
-		object.ansT = "1r";
+		object.ansT = \"1r\";
 		object.ans = (negB/twoA);
 		return(object);
 	}else if(determinant > 0){
 		var object = new Object();
-		object.ansT = "2r";
+		object.ansT = \"2r\";
 		
 		var rootDet = Math.sqrt(determinant);
 		var an1 = (negB - rootDet)/twoA;
@@ -80,9 +80,9 @@ function solve(a, b, c){
 		return(object);
 	}else{
 		var object = new Object();
-		object.ansT = "2u";
+		object.ansT = \"2u\";
 		var rootDet = Math.sqrt((-1 * determinant))/twoA;
-		object.ans = [((negB/twoA) + "- i" + rootDet), (((negB/twoA) + "+ i" + rootDet))];
+		object.ans = [((negB/twoA) + \"- i\" + rootDet), (((negB/twoA) + \"+ i\" + rootDet))];
 		return(object);
 	}
 }
@@ -92,19 +92,19 @@ function solve(a, b, c){
 </head>
 <body>
 	
-	<center style="width: 15%; border-radius: 1em; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border: black 2px solid;">
+	<center style=\"width: 15%; border-radius: 1em; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border: black 2px solid;\">
 	<div>
 		<h2>Easy Solve Quadratic Equations</h2>
 	</div>
-	<div style="margin: 5px;">
-		<input id="eqInp" style="text-align: center;" placeholder="ax^2+bx+c=0"><button id="solve" onclick="document.getElementById(\'p\').innerHTML = analyze(document.getElementById(\'eqInp\').value)">SOLVE</button>
+	<div style=\"margin: 5px;\">
+		<input id=\"eqInp\" style=\"text-align: center;\" placeholder=\"ax^2+bx+c=0\"><button id=\"solve\" onclick=\"document.getElementById('p').innerHTML = analyze(document.getElementById('eqInp').value)\">SOLVE</button>
 	</div>
-	<p id="p"></p>
+	<p id=\"p\"></p>
 	</center>
 	<p><sub>Made by Rey Bontje</sub></p>
 </body>
 </html>
-';	
+";	
 	
 	
 }
